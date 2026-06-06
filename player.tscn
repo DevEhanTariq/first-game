@@ -8,14 +8,14 @@ size = Vector2(399, 156)
 
 [node name="Player" type="Node2D" unique_id=682621535]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1722020748]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=683765734]
+script = ExtResource("2_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1688582909]
+position = Vector2(-290.5, 0)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1722020748]
 texture = ExtResource("1_4flbx")
 region_enabled = true
 region_rect = Rect2(0, 0, 983.717, 157.51)
-script = ExtResource("2_onrkg")
-
-[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=131297422]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1688582909]
-position = Vector2(-290.5, 0)
-shape = SubResource("RectangleShape2D_onrkg")
