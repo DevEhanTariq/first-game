@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bbjqqjmee6a1o"]
 
 [ext_resource type="Texture2D" uid="uid://c3ho1c011kbbp" path="res://Assets/Road.png" id="1_u52ul"]
+[ext_resource type="PackedScene" uid="uid://d038k4uvwogdj" path="res://player.tscn" id="2_vonw3"]
 
 [node name="Level" type="Node2D" unique_id=1753858453]
 
 [node name="Road" type="Sprite2D" parent="." unique_id=259059565]
 texture = ExtResource("1_u52ul")
+
+[node name="Player" parent="." unique_id=682621535 instance=ExtResource("2_vonw3")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=897658622]
 zoom = Vector2(0.5, 0.5)
