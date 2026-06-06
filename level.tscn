@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://bbjqqjmee6a1o"]
 
+[ext_resource type="Script" uid="uid://b16i4suonajoc" path="res://roadGen.gd" id="1_f2txt"]
 [ext_resource type="Texture2D" uid="uid://c3ho1c011kbbp" path="res://Assets/Road.png" id="1_u52ul"]
+[ext_resource type="Script" uid="uid://bbyyxppy7obu1" path="res://roadMovment.gd" id="2_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://d038k4uvwogdj" path="res://player.tscn" id="2_vonw3"]
 [ext_resource type="Script" uid="uid://cts3b8c76wtlx" path="res://label.gd" id="3_oi3di"]
 
 [node name="Level" type="Node2D" unique_id=1753858453]
+script = ExtResource("1_f2txt")
 
 [node name="Road" type="Sprite2D" parent="." unique_id=259059565]
 texture = ExtResource("1_u52ul")
+script = ExtResource("2_0b4ue")
 
-[node name="Player" parent="." unique_id=682621535 instance=ExtResource("2_vonw3")]
-position = Vector2(-400, 0)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=897658622]
+zoom = Vector2(0.5, 0.5)
 
 [node name="Label" type="Label" parent="." unique_id=1745106174]
 offset_left = -1151.0
@@ -20,5 +24,6 @@ offset_bottom = -404.0
 scale = Vector2(4, 4)
 script = ExtResource("3_oi3di")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=897658622]
-zoom = Vector2(0.5, 0.5)
+[node name="Player" parent="." unique_id=682621535 instance=ExtResource("2_vonw3")]
+top_level = true
+position = Vector2(-400, 0)
