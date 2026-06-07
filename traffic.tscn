@@ -3,9 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://ckslsxyly0cxo" path="res://Assets/vehicleSpriteSheet.png" id="1_fqe1r"]
 [ext_resource type="Script" uid="uid://cb2wqcsoi7p22" path="res://carMovement.gd" id="2_noekn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noekn"]
+size = Vector2(383, 157)
+
 [node name="Traffic" type="Node2D" unique_id=2012719958]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=670001456]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=489217317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1111370822]
+top_level = true
+position = Vector2(8.5, -0.5)
+shape = SubResource("RectangleShape2D_noekn")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=670001456]
 texture = ExtResource("1_fqe1r")
 region_enabled = true
 region_rect = Rect2(0, 160, 400, 160)
