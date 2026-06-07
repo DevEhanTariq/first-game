@@ -10,7 +10,7 @@ var carsAmountPerY = []
 func spawn_car(amount, xCord):
 	var PossibleLanes = [0,1,2]
 	var leftLanes = []
-	for i in range(amount):
+	for k in range(amount):
 		var switchLane = randi_range(0,PossibleLanes.size()-1)
 		var currentLane = PossibleLanes[switchLane]
 		for item in PossibleLanes:
@@ -31,11 +31,6 @@ func delete_oldest_cars():
 			cars[0].queue_free()
 		carsAmountPerY.queue_free()
 		
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	spawn_car(2, 1500)
