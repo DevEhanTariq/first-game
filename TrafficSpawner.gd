@@ -7,32 +7,22 @@ var allowCar = true
 var cars = []
 var carsAmountPerY = []
 
-func spawn_car(amount, xCord):
-	var PossibleLanes = [0,1,2]
-	var leftLanes = []
-	for k in range(amount):
-		var switchLane = randi_range(0,PossibleLanes.size()-1)
-		var currentLane = PossibleLanes[switchLane]
-		for item in PossibleLanes:
-			if not [currentLane].has(item):
-				leftLanes.append(item)
-		PossibleLanes = leftLanes
+func spawn_car(lane, xCord):
+	var sibling = get_parent().get_node("Traffic")
+	var copy = sibling.duplicate()
+	copy.position = Vector2(xCord,lanesY[lane])
+	cars.append(copy)
+	get_parent().add_child(copy)
 		
-		var sibling = get_parent().get_node("Traffic")
-		var copy = sibling.duplicate()
-		copy.position = Vector2(xCord,lanesY[currentLane])
-		cars.append(copy)
-		get_parent().add_child(copy)
-	carsAmountPerY.append(amount)
+func delete_oldest_road():
+	pass
 		
-func delete_oldest_cars():
-	if carsAmountPerY.size() > 4:
-		for j in range(carsAmountPerY[0]):
-			cars[0].queue_free()
-		carsAmountPerY.queue_free()
-		
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	spawn_car(2, 1500)
-	delete_oldest_cars()
+	spawn_car(randi_range(0,2), 1500)
 	
