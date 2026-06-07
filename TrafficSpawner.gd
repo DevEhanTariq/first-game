@@ -3,6 +3,7 @@ extends Node
 var x = 2000
 var lanesY = [-300, 0, 300]
 var lane = [[0,1],[1,2],[0,2]]
+var laneHistory = []
 
 var allowCar = true
 var cars = []
@@ -10,6 +11,10 @@ var speed = 300
 
 func spawn_car(xCord):
 	var lanesToUse = lane[randi_range(0,2)]
+	if laneHistory != []:
+		while lanesToUse == laneHistory:
+			lanesToUse = lane[randi_range(0,2)]
+	laneHistory = lanesToUse
 	for i in range(2):
 		if allowCar:
 			var sibling = get_parent().get_node("Traffic")
