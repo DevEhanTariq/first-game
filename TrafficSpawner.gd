@@ -9,6 +9,8 @@ var allowCar = true
 var cars = []
 var speed = 300
 
+var score = 0
+
 func spawn_car(xCord):
 	var lanesToUse = lane[randi_range(0,2)]
 	if laneHistory != []:
@@ -30,6 +32,7 @@ func delete_oldest_cars():
 		oldest_cars.queue_free()
 		oldest_cars = cars.pop_front()
 		oldest_cars.queue_free()
+		score += 1
 
 func CarPatternSpawner():
 	if cars[-1].position.x < 800:
@@ -47,7 +50,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	spawn_car(2000)
 	CarPatternSpawner()
+
 	delete_oldest_cars()
 	moveCars(delta)
-	print(cars.size())
+	print(score)
 	
