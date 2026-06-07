@@ -3,11 +3,17 @@
 [ext_resource type="Script" uid="uid://b16i4suonajoc" path="res://roadGen.gd" id="1_f2txt"]
 [ext_resource type="Texture2D" uid="uid://c3ho1c011kbbp" path="res://Assets/Road.png" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://bbyyxppy7obu1" path="res://roadMovment.gd" id="2_0b4ue"]
+[ext_resource type="Texture2D" uid="uid://oy5aje7k8d04" path="res://Assets/Grass.png" id="2_1ainy"]
 [ext_resource type="PackedScene" uid="uid://d038k4uvwogdj" path="res://player.tscn" id="2_vonw3"]
 [ext_resource type="Script" uid="uid://cts3b8c76wtlx" path="res://label.gd" id="3_oi3di"]
 
 [node name="Level" type="Node2D" unique_id=1753858453]
 script = ExtResource("1_f2txt")
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=1991605969]
+position = Vector2(-5, -4.0000076)
+scale = Vector2(1.59, 1.044)
+texture = ExtResource("2_1ainy")
 
 [node name="Road" type="Sprite2D" parent="." unique_id=259059565]
 texture = ExtResource("1_u52ul")
