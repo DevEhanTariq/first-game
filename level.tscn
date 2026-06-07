@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bbjqqjmee6a1o"]
 
 [ext_resource type="Script" uid="uid://b16i4suonajoc" path="res://roadGen.gd" id="1_f2txt"]
-[ext_resource type="Script" uid="uid://b0ra0hotgnjak" path="res://TrafficSpawner.gd" id="1_n6hdu"]
 [ext_resource type="Texture2D" uid="uid://c3ho1c011kbbp" path="res://Assets/Road.png" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://bbyyxppy7obu1" path="res://roadMovment.gd" id="2_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://oy5aje7k8d04" path="res://Assets/Grass.png" id="2_1ainy"]
@@ -12,8 +11,7 @@
 [node name="Level" type="Node2D" unique_id=1753858453]
 script = ExtResource("1_f2txt")
 
-[node name="Node" type="Node" parent="." unique_id=297771206]
-script = ExtResource("1_n6hdu")
+[node name="Traffic Script" type="Node" parent="." unique_id=297771206]
 
 [node name="Grass" type="Sprite2D" parent="." unique_id=1991605969]
 position = Vector2(-5, -4.0000076)
