@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bmc3nbscm8j46" path="res://Player.gd" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(399, 156)
+size = Vector2(399, 157)
 
 [node name="Player" type="Node2D" unique_id=682621535]
 
@@ -12,10 +12,11 @@ size = Vector2(399, 156)
 script = ExtResource("2_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1688582909]
-position = Vector2(-290.5, 0)
+position = Vector2(-290.5, 0.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1722020748]
+position = Vector2(-290, 2)
 texture = ExtResource("1_4flbx")
 region_enabled = true
-region_rect = Rect2(0, 0, 983.717, 157.51)
+region_rect = Rect2(0, 0, 400, 160)

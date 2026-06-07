@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://by04jynxutxcn"]
+
+[ext_resource type="Texture2D" uid="uid://ckslsxyly0cxo" path="res://Assets/vehicleSpriteSheet.png" id="1_fqe1r"]
+[ext_resource type="Script" uid="uid://cb2wqcsoi7p22" path="res://carMovement.gd" id="2_noekn"]
+
+[node name="Traffic" type="Node2D" unique_id=2012719958]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=670001456]
+texture = ExtResource("1_fqe1r")
+region_enabled = true
+region_rect = Rect2(0, 160, 400, 160)
+script = ExtResource("2_noekn")

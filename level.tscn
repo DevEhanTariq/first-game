@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://bbjqqjmee6a1o"]
 
 [ext_resource type="Script" uid="uid://b16i4suonajoc" path="res://roadGen.gd" id="1_f2txt"]
+[ext_resource type="Script" uid="uid://b0ra0hotgnjak" path="res://TrafficSpawner.gd" id="1_n6hdu"]
 [ext_resource type="Texture2D" uid="uid://c3ho1c011kbbp" path="res://Assets/Road.png" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://bbyyxppy7obu1" path="res://roadMovment.gd" id="2_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://oy5aje7k8d04" path="res://Assets/Grass.png" id="2_1ainy"]
 [ext_resource type="PackedScene" uid="uid://d038k4uvwogdj" path="res://player.tscn" id="2_vonw3"]
 [ext_resource type="Script" uid="uid://cts3b8c76wtlx" path="res://label.gd" id="3_oi3di"]
+[ext_resource type="PackedScene" uid="uid://by04jynxutxcn" path="res://traffic.tscn" id="7_n6hdu"]
 
 [node name="Level" type="Node2D" unique_id=1753858453]
 script = ExtResource("1_f2txt")
+
+[node name="Node" type="Node" parent="." unique_id=297771206]
+script = ExtResource("1_n6hdu")
 
 [node name="Grass" type="Sprite2D" parent="." unique_id=1991605969]
 position = Vector2(-5, -4.0000076)
@@ -33,3 +38,7 @@ script = ExtResource("3_oi3di")
 [node name="Player" parent="." unique_id=682621535 instance=ExtResource("2_vonw3")]
 top_level = true
 position = Vector2(-400, 0)
+
+[node name="Traffic" parent="." unique_id=2012719958 instance=ExtResource("7_n6hdu")]
+top_level = true
+position = Vector2(-806, 838)
