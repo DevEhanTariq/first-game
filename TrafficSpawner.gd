@@ -7,7 +7,7 @@ var laneHistory = []
 
 var allowCar = true
 var cars = []
-var speed = 300
+var speed = 500
 
 func spawn_car(xCord):
 	var lanesToUse = lane[randi_range(0,2)]
