@@ -12,11 +12,9 @@ size = Vector2(399, 157)
 script = ExtResource("2_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1688582909]
-position = Vector2(-290.5, 0.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1722020748]
-position = Vector2(-290, 2)
 texture = ExtResource("1_4flbx")
 region_enabled = true
 region_rect = Rect2(0, 0, 400, 160)

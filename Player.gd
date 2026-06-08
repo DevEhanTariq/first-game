@@ -11,7 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var input_direction = Input.get_vector("none", "none", "up", "down")
-	if input_direction[1] != 0:
+	if input_direction[1] != 0 and Globals.collision == false:
 		lane += input_direction[1]/laneChangeRate * delta
 		var nLane = round(lane)
 	
@@ -26,3 +26,5 @@ func _process(delta: float) -> void:
 			position.y = 0
 		elif nLane == 1:
 			position.y = 300
+			
+	Globals.playerCords = position

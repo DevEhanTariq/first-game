@@ -38,8 +38,15 @@ func CarPatternSpawner():
 
 func moveCars(delta: float):
 	for i in cars:
+		speed = speed * Globals.speed_multiplier
 		i.position.x -= speed * delta 
 		
+		
+func checkCollision():
+	for body in cars:
+		if body.position.y == Globals.playerCords.y and body.position.x <= (Globals.playerCords.x) and body.position.x >= (Globals.playerCords.x - 500):
+			Globals.collision = true
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -51,5 +58,6 @@ func _process(delta: float) -> void:
 	CarPatternSpawner()
 	delete_oldest_cars()
 	moveCars(delta)
+	checkCollision()
 	
 	
