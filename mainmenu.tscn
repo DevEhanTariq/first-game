@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ctsjpgtrbk488"]
+
+[ext_resource type="Script" uid="uid://btp5rcplnumug" path="res://mainmenu.gd" id="1_cmhrf"]
+
+[node name="mainmenu" type="Node2D" unique_id=339325134]
+script = ExtResource("1_cmhrf")
+
+[node name="Start" type="Button" parent="." unique_id=94479950]
+offset_left = -127.0
+offset_top = -49.0
+offset_right = 115.0
+offset_bottom = 59.0
+text = "Start"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=182847465]
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

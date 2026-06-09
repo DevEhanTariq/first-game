@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d038k4uvwogdj" path="res://player.tscn" id="2_vonw3"]
 [ext_resource type="Script" uid="uid://cts3b8c76wtlx" path="res://label.gd" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://by04jynxutxcn" path="res://traffic.tscn" id="7_n6hdu"]
+[ext_resource type="Script" uid="uid://semhr1la2a5e" path="res://score_counter.gd" id="10_8cye3"]
 
 [node name="Level" type="Node2D" unique_id=1753858453]
 script = ExtResource("1_f2txt")
@@ -20,13 +21,20 @@ script = ExtResource("2_i2t4f")
 script = ExtResource("1_n6hdu")
 
 [node name="Grass" type="Sprite2D" parent="." unique_id=1991605969]
+visibility_layer = 513
 position = Vector2(-5, -4.0000076)
 scale = Vector2(1.59, 1.044)
 texture = ExtResource("2_1ainy")
 
 [node name="Road" type="Sprite2D" parent="." unique_id=259059565]
+visibility_layer = 129
 texture = ExtResource("1_u52ul")
 script = ExtResource("2_0b4ue")
+
+[node name="Road2" type="Sprite2D" parent="." unique_id=1191687767]
+visibility_layer = 257
+position = Vector2(-2000, 0)
+texture = ExtResource("1_u52ul")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=897658622]
 zoom = Vector2(0.5, 0.5)
@@ -48,7 +56,10 @@ top_level = true
 position = Vector2(-786, 801)
 
 [node name="ScoreCounter" type="Label" parent="." unique_id=1110757682]
-offset_left = -330.0
-offset_top = -641.0
-offset_right = 782.0
-offset_bottom = -508.0
+top_level = true
+offset_left = -339.0
+offset_top = -649.99994
+offset_right = 774.80005
+offset_bottom = -515.19995
+scale = Vector2(5, 5)
+script = ExtResource("10_8cye3")

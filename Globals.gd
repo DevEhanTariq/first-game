@@ -2,6 +2,8 @@ extends Node
 
 
 var score = 0
+var highscore = 0
+
 var collision = false
 var speed_multiplier: float = 1.0
 var playerCords = Vector2(0,0)
@@ -12,7 +14,11 @@ func speedLevels():
 	if Globals.score == 7:
 		Globals.difficulty = 0.00005
 	if Globals.score == 15:
-		Globals.difficulty = 0.0000075
+		Globals.difficulty = 0.0000015
+
+func updateHigh():
+	if collision:
+		Globals.highscore = Globals.score
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,4 +30,3 @@ func _process(delta: float) -> void:
 	speedLevels()
 	if Globals.collision:
 		Globals.speed_multiplier = 0
-	print(Globals.score)

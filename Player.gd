@@ -8,16 +8,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("up"):
-		lane -= 1
-	elif Input.is_action_just_pressed("down"):
-		lane += 1
-	
-	if lane > 1:
-		lane = 1
-	elif lane < -1:
-		lane = -1
-	
-	position.y = lane * 300
-			
-	Globals.playerCords = position
+	if Globals.collision == false:
+		if Input.is_action_just_pressed("up"):
+			lane -= 1
+		elif Input.is_action_just_pressed("down"):
+			lane += 1
+		
+		if lane > 1:
+			lane = 1
+		elif lane < -1:
+			lane = -1
+		
+		position.y = lane * 300
+				
+		Globals.playerCords = position
