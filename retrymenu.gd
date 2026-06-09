@@ -8,9 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	Globals.collision = false
+	Globals.speed_multiplier = 1.0
+
 
 
 func _on_retry_pressed() -> void:
-	Globals.collision = false
 	get_tree().change_scene_to_file("res://level.tscn")

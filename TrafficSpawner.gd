@@ -25,16 +25,18 @@ func spawn_car(xCord):
 	allowCar = false
 
 func delete_oldest_cars():
-	if cars[0].position.x < -1500:
-		var oldest_cars = cars.pop_front()
-		oldest_cars.queue_free()
-		oldest_cars = cars.pop_front()
-		oldest_cars.queue_free()
-		Globals.score += 1
+	if Globals.collision == false:
+		if cars[0].position.x < -1500:
+			var oldest_cars = cars.pop_front()
+			oldest_cars.queue_free()
+			oldest_cars = cars.pop_front()
+			oldest_cars.queue_free()
+			Globals.score += 1
 
 func CarPatternSpawner():
-	if cars[-1].position.x < 800:
-		allowCar = true
+	if Globals.collision == false:
+		if cars[-1].position.x < 800:
+			allowCar = true
 
 func moveCars(delta: float):
 	for i in cars:
@@ -47,6 +49,11 @@ func checkCollision():
 		if body.position.y == Globals.playerCords.y and body.position.x <= (Globals.playerCords.x) and body.position.x >= (Globals.playerCords.x - 500):
 			Globals.collision = true
 	
+func onCollision():
+	if Globals.collision:
+		cars = []
+
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -54,6 +61,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	onCollision()
 	spawn_car(2000)
 	CarPatternSpawner()
 	delete_oldest_cars()
