@@ -17,8 +17,8 @@ func speedLevels():
 		Globals.difficulty = 0.0000015
 
 func updateHigh():
-	if collision:
-		Globals.highscore = Globals.score
+	if collision and Globals.score > Globals.highscore:
+		Globals.highscore = Globals.scored
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +26,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	updateHigh()
 	Globals.speed_multiplier = Globals.difficulty*Globals.score + 1
 	speedLevels()
 	if Globals.collision:
 		Globals.speed_multiplier = 0
+		get_tree().change_scene_to_file("res://retrymenu.gd")

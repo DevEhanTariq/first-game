@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c4rpqblxql1tu"]
+
+[ext_resource type="Script" uid="uid://5ym6o5njkh3p" path="res://retrymenu.gd" id="1_dqa5o"]
+[ext_resource type="Script" uid="uid://dkpv2wua65v87" path="res://highscore.gd" id="2_lrxpy"]
+
+[node name="retrymenu" type="Node2D" unique_id=708822188]
+script = ExtResource("1_dqa5o")
+
+[node name="message" type="Label" parent="." unique_id=1414087570]
+offset_left = -86.0
+offset_top = -271.0
+offset_right = 96.0
+offset_bottom = -196.0
+text = "          You Lost!
+
+HighScore: "
+
+[node name="HighscoreShower" type="Label" parent="." unique_id=550383879]
+offset_left = 8.0
+offset_top = -220.0
+offset_right = 154.0
+offset_bottom = -84.0
+script = ExtResource("2_lrxpy")
+
+[node name="Retry" type="Button" parent="." unique_id=2135833235]
+offset_left = -77.0
+offset_top = 1.0
+offset_right = 81.0
+offset_bottom = 82.0
+text = "Retry"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1132360324]
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
