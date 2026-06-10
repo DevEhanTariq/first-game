@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpixdx4ycpcp1"]
+
+[ext_resource type="Script" uid="uid://bohfsq1qf52e0" path="res://return.gd" id="1_qui76"]
+
+[node name="restartMenu" type="Node2D" unique_id=1952259573]
+process_mode = 3
+script = ExtResource("1_qui76")
+
+[node name="Button" type="Button" parent="." unique_id=1025654947]
+offset_left = 435.0
+offset_top = 260.0
+offset_right = 705.0
+offset_bottom = 400.0
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

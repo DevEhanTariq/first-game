@@ -49,11 +49,6 @@ func checkCollision():
 		if body.position.y == Globals.playerCords.y and body.position.x <= (Globals.playerCords.x) and body.position.x >= (Globals.playerCords.x - 500):
 			Globals.collision = true
 	
-func onCollision():
-	if Globals.collision:
-		cars = []
-
-	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -61,7 +56,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	onCollision()
 	spawn_car(2000)
 	CarPatternSpawner()
 	delete_oldest_cars()

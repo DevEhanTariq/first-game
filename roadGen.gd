@@ -8,11 +8,6 @@ var road = 0
 
 var new_road: Sprite2D
 
-func onCollision():
-	if Globals.collision:
-		Globals.speed_multiplier = 0
-		roads = []
-
 func delete_after_delay(node: Node, delay: float):
 	await get_tree().create_timer(delay).timeout
 	if is_instance_valid(node):
@@ -33,7 +28,6 @@ func delete_oldest_road():
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_float):
-	onCollision()
 	spawn_road()
 	var latestRoadPos = new_road.position[0]
 	

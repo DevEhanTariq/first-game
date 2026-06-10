@@ -1,5 +1,6 @@
 extends Node
 
+var reload = false
 
 var score = 0
 var highscore = 0
@@ -11,12 +12,7 @@ var difficulty = 0.0001
 
 func onCollision():
 	if Globals.collision:
-		Globals.speed_multiplier = 0
-		Globals.score = 0
-		Globals.speed_multiplier = 0
-		Globals.playerCords = Vector2(0,0)
-		Globals.difficulty = 0.0001
-		get_tree().change_scene_to_file("res://retrymenu.tscn")
+		get_tree().change_scene_to_file("res://restart_menu.tscn")
 
 func speedLevels():
 	if Globals.score == 7:
@@ -26,11 +22,21 @@ func speedLevels():
 
 func updateHigh():
 	if collision and Globals.score > Globals.highscore:
-		Globals.highscore = Globals.scored
-
+		Globals.highscore = Globals.score
+		
+func reloadNow():
+	if Globals.reload:
+		Globals.reload = false
+		Globals.score = 0
+		Globals.collision = false
+		Globals.speed_multiplier = 1.0
+		Globals.playerCords = Vector2(0,0)
+		Globals.difficulty = 0.0001
+		get_tree().reload_current_scene()
+		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	reloadNow()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
