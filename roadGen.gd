@@ -26,6 +26,9 @@ func delete_oldest_road():
 		var oldest_road = roads.pop_front()
 		oldest_road.queue_free()
 		
+func _ready() -> void:
+	roads = []
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_float):
 	spawn_road()

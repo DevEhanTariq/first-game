@@ -12,6 +12,7 @@ var difficulty = 0.0001
 
 func onCollision():
 	if Globals.collision:
+		get_tree().paused = true
 		get_tree().change_scene_to_file("res://restart_menu.tscn")
 
 func speedLevels():
@@ -32,11 +33,11 @@ func reloadNow():
 		Globals.speed_multiplier = 1.0
 		Globals.playerCords = Vector2(0,0)
 		Globals.difficulty = 0.0001
-		get_tree().reload_current_scene()
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reloadNow()
+	get_tree().paused = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
