@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://oy5aje7k8d04" path="res://Assets/Grass.png" id="2_1ainy"]
 [ext_resource type="Script" uid="uid://ghbhbdiyfmm0" path="res://Globals.gd" id="2_i2t4f"]
 [ext_resource type="PackedScene" uid="uid://d038k4uvwogdj" path="res://player.tscn" id="2_vonw3"]
-[ext_resource type="Script" uid="uid://cts3b8c76wtlx" path="res://label.gd" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://by04jynxutxcn" path="res://traffic.tscn" id="7_n6hdu"]
-[ext_resource type="Script" uid="uid://semhr1la2a5e" path="res://score_counter.gd" id="10_8cye3"]
+[ext_resource type="FontFile" uid="uid://clxwsglkrnbrp" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="9_2orkt"]
+[ext_resource type="Script" uid="uid://du1bctq2vtrl4" path="res://score_display.gd" id="10_8cye3"]
+[ext_resource type="Texture2D" uid="uid://b8gdhpsh5lw6d" path="res://Assets/Blank.png" id="11_2orkt"]
 
 [node name="Level" type="Node2D" unique_id=1753858453]
 script = ExtResource("1_f2txt")
@@ -27,25 +28,17 @@ scale = Vector2(1.59, 1.044)
 texture = ExtResource("2_1ainy")
 
 [node name="Road" type="Sprite2D" parent="." unique_id=259059565]
-visibility_layer = 129
+visibility_layer = 128
 texture = ExtResource("1_u52ul")
 script = ExtResource("2_0b4ue")
 
 [node name="Road2" type="Sprite2D" parent="." unique_id=1191687767]
-visibility_layer = 257
+visibility_layer = 256
 position = Vector2(-2000, 0)
 texture = ExtResource("1_u52ul")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=897658622]
 zoom = Vector2(0.5, 0.5)
-
-[node name="Label" type="Label" parent="." unique_id=1745106174]
-offset_left = -1151.0
-offset_top = -646.0
-offset_right = -483.0
-offset_bottom = -404.0
-scale = Vector2(4, 4)
-script = ExtResource("3_oi3di")
 
 [node name="Player" parent="." unique_id=682621535 instance=ExtResource("2_vonw3")]
 top_level = true
@@ -55,11 +48,21 @@ position = Vector2(-400, 0)
 top_level = true
 position = Vector2(-786, 801)
 
-[node name="ScoreCounter" type="Label" parent="." unique_id=1110757682]
+[node name="ScoreDisplay" type="Label" parent="." unique_id=1674226613]
 top_level = true
-offset_left = -339.0
-offset_top = -649.99994
-offset_right = 774.80005
-offset_bottom = -515.19995
-scale = Vector2(5, 5)
+z_index = 1
+offset_left = -243.0
+offset_top = -568.0
+offset_right = 393.0
+offset_bottom = -223.0
+theme_override_fonts/font = ExtResource("9_2orkt")
+theme_override_font_sizes/font_size = 100
 script = ExtResource("10_8cye3")
+
+[node name="Blank" type="Sprite2D" parent="ScoreDisplay" unique_id=995112535]
+show_behind_parent = true
+top_level = true
+light_mask = 2
+visibility_layer = 2
+position = Vector2(368, 176)
+texture = ExtResource("11_2orkt")

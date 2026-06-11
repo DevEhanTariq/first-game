@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cj4r372nttses" path="res://Assets/Fonts/static/PixelifySans-Bold.ttf" id="3_nwq8c"]
 [ext_resource type="Texture2D" uid="uid://oy5aje7k8d04" path="res://Assets/Grass.png" id="4_nwq8c"]
 [ext_resource type="Script" uid="uid://kl7cgrjvw212" path="res://label_2.gd" id="5_pdjcm"]
+[ext_resource type="FontFile" uid="uid://bco1yqcs0ihm2" path="res://Assets/Fonts/static/PixelifySans-SemiBold.ttf" id="5_unhnm"]
 
 [node name="restartMenu" type="Node2D" unique_id=1952259573]
 process_mode = 3
@@ -36,11 +37,11 @@ position = Vector2(438, 323)
 texture = ExtResource("4_nwq8c")
 
 [node name="Label2" type="Label" parent="." unique_id=2064551205]
-offset_left = 452.0
-offset_top = 56.0
-offset_right = 605.0
-offset_bottom = 156.0
-theme_override_fonts/font = ExtResource("3_nwq8c")
+offset_left = 420.0
+offset_top = 53.0
+offset_right = 573.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("5_unhnm")
 theme_override_font_sizes/font_size = 50
 script = ExtResource("5_pdjcm")
 
