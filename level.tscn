@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://clxwsglkrnbrp" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="9_2orkt"]
 [ext_resource type="Script" uid="uid://du1bctq2vtrl4" path="res://score_display.gd" id="10_8cye3"]
 [ext_resource type="Texture2D" uid="uid://b8gdhpsh5lw6d" path="res://Assets/Blank.png" id="11_2orkt"]
+[ext_resource type="PackedScene" uid="uid://b2yr6m71k2r8n" path="res://shader_scene.tscn" id="12_aicyk"]
 
 [node name="Level" type="Node2D" unique_id=1753858453]
 script = ExtResource("1_f2txt")
@@ -66,3 +67,5 @@ light_mask = 2
 visibility_layer = 2
 position = Vector2(368, 176)
 texture = ExtResource("11_2orkt")
+
+[node name="ShaderScene" parent="." unique_id=1865491015 instance=ExtResource("12_aicyk")]

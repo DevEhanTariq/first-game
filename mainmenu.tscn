@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3ho1c011kbbp" path="res://Assets/Road.png" id="4_3pujl"]
 [ext_resource type="Texture2D" uid="uid://ckslsxyly0cxo" path="res://Assets/vehicleSpriteSheet.png" id="5_3pujl"]
 [ext_resource type="FontFile" uid="uid://clxwsglkrnbrp" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="6_7uvds"]
+[ext_resource type="PackedScene" uid="uid://b2yr6m71k2r8n" path="res://shader_scene.tscn" id="7_at6rn"]
 
 [node name="mainmenu" type="Node2D" unique_id=339325134]
 script = ExtResource("1_cmhrf")
@@ -79,5 +80,8 @@ offset_bottom = 77.0
 theme_override_fonts/font = ExtResource("6_7uvds")
 theme_override_font_sizes/font_size = 54
 text = "Start"
+
+[node name="ShaderScene" parent="." unique_id=1865491015 instance=ExtResource("7_at6rn")]
+top_level = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

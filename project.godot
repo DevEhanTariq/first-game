@@ -13,6 +13,9 @@ config_version=5
 config/name="FirstGame"
 run/main_scene="uid://ctsjpgtrbk488"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.26657522, 0.2665752, 0.2665752, 1)
+boot_splash/show_image=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,7 +25,7 @@ Globals="*uid://ghbhbdiyfmm0"
 [display]
 
 window/size/mode=2
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [input]
 
