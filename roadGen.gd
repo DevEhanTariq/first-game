@@ -28,6 +28,10 @@ func delete_oldest_road():
 		
 func _ready() -> void:
 	roads = []
+	road = 0
+	allowRoad = true
+	defaultPos = 2000
+	roadLength = 2000
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_float):

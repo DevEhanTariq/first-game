@@ -49,10 +49,16 @@ func checkCollision():
 		if body.position.y == Globals.playerCords.y and body.position.x <= (Globals.playerCords.x) and body.position.x >= (Globals.playerCords.x - 500):
 			Globals.collision = true
 	
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cars = []
-
+	speed = 500
+	allowCar = true
+	laneHistory = []
+	x = 2000
+	lanesY = [-300, 0, 300]
+	lane = [[0,1],[1,2],[0,2]]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
