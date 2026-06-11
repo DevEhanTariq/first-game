@@ -1,19 +1,83 @@
 [gd_scene format=3 uid="uid://ctsjpgtrbk488"]
 
 [ext_resource type="Script" uid="uid://btp5rcplnumug" path="res://mainmenu.gd" id="1_cmhrf"]
-[ext_resource type="Texture2D" uid="uid://djvmcr0nyfm0j" path="res://icon.svg" id="2_d2nv2"]
+[ext_resource type="Texture2D" uid="uid://cq0i1e1i2lms3" path="res://Assets/Start.png" id="2_d2nv2"]
+[ext_resource type="Texture2D" uid="uid://oy5aje7k8d04" path="res://Assets/Grass.png" id="3_igs2m"]
+[ext_resource type="Texture2D" uid="uid://c3ho1c011kbbp" path="res://Assets/Road.png" id="4_3pujl"]
+[ext_resource type="Texture2D" uid="uid://ckslsxyly0cxo" path="res://Assets/vehicleSpriteSheet.png" id="5_3pujl"]
+[ext_resource type="FontFile" uid="uid://clxwsglkrnbrp" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="6_7uvds"]
 
 [node name="mainmenu" type="Node2D" unique_id=339325134]
 script = ExtResource("1_cmhrf")
 
 [node name="Start" type="Button" parent="." unique_id=94479950]
-offset_left = -66.0
-offset_top = -75.0
-offset_right = 70.0
-offset_bottom = 61.0
+top_level = true
+offset_left = -306.0
+offset_top = -162.0
+offset_right = 1702.0
+offset_bottom = 1846.0
+scale = Vector2(0.5, 0.5)
 icon = ExtResource("2_d2nv2")
 flat = true
+icon_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=182847465]
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=469433060]
+position = Vector2(-46, -50)
+scale = Vector2(1.5455, 1)
+texture = ExtResource("3_igs2m")
+
+[node name="Road" type="Sprite2D" parent="." unique_id=552929337]
+position = Vector2(-60, -1.9999998)
+scale = Vector2(0.73174995, 0.66990745)
+texture = ExtResource("4_3pujl")
+
+[node name="VehicleSpriteSheet" type="Sprite2D" parent="." unique_id=1932023098]
+position = Vector2(-439, 186)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_3pujl")
+region_enabled = true
+region_rect = Rect2(0, 0, 400, 160)
+
+[node name="VehicleSpriteSheet2" type="Sprite2D" parent="." unique_id=387646145]
+position = Vector2(-237, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_3pujl")
+region_enabled = true
+region_rect = Rect2(0, 160, 400, 160)
+
+[node name="VehicleSpriteSheet3" type="Sprite2D" parent="." unique_id=1034958172]
+position = Vector2(254, 190)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_3pujl")
+region_enabled = true
+region_rect = Rect2(0, 320, 400, 160)
+
+[node name="VehicleSpriteSheet4" type="Sprite2D" parent="." unique_id=681785316]
+position = Vector2(434, 199)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_3pujl")
+region_enabled = true
+region_rect = Rect2(0, 480, 400, 160)
+
+[node name="Label" type="Label" parent="." unique_id=88458060]
+offset_left = -374.0
+offset_top = -266.0
+offset_right = 381.0
+offset_bottom = -151.0
+theme_override_fonts/font = ExtResource("6_7uvds")
+theme_override_font_sizes/font_size = 86
+text = "MotorWay Traffic!"
+
+[node name="Label2" type="Label" parent="." unique_id=2122510138]
+top_level = true
+offset_left = -89.0
+offset_top = -38.0
+offset_right = 666.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("6_7uvds")
+theme_override_font_sizes/font_size = 54
+text = "Start"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
