@@ -1,16 +1,36 @@
 [gd_scene format=3 uid="uid://cpixdx4ycpcp1"]
 
 [ext_resource type="Script" uid="uid://bohfsq1qf52e0" path="res://return.gd" id="1_qui76"]
+[ext_resource type="Texture2D" uid="uid://c52bh2vld2cmg" path="res://Assets/Reset.png" id="2_eg8yu"]
+[ext_resource type="FontFile" uid="uid://cj4r372nttses" path="res://Assets/Fonts/static/PixelifySans-Bold.ttf" id="3_nwq8c"]
+[ext_resource type="Texture2D" uid="uid://oy5aje7k8d04" path="res://Assets/Grass.png" id="4_nwq8c"]
 
 [node name="restartMenu" type="Node2D" unique_id=1952259573]
 process_mode = 3
 script = ExtResource("1_qui76")
 
 [node name="Button" type="Button" parent="." unique_id=1025654947]
-offset_left = 435.0
-offset_top = 260.0
-offset_right = 705.0
-offset_bottom = 400.0
+top_level = true
+offset_left = -25.0
+offset_top = -6.0
+offset_right = 2044.0
+offset_bottom = 2002.0
 text = "Restart"
+icon = ExtResource("2_eg8yu")
+flat = true
+
+[node name="Label" type="Label" parent="." unique_id=1032396681]
+top_level = true
+offset_left = 417.0
+offset_top = 267.0
+offset_right = 765.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("3_nwq8c")
+theme_override_font_sizes/font_size = 74
+text = "Restart!"
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=1416455289]
+position = Vector2(438, 323)
+texture = ExtResource("4_nwq8c")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
