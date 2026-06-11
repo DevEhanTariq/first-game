@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://bohfsq1qf52e0" path="res://return.gd" id="1_qui76"]
 [ext_resource type="Texture2D" uid="uid://c52bh2vld2cmg" path="res://Assets/Reset.png" id="2_eg8yu"]
 [ext_resource type="FontFile" uid="uid://cj4r372nttses" path="res://Assets/Fonts/static/PixelifySans-Bold.ttf" id="3_nwq8c"]
+[ext_resource type="AudioStream" uid="uid://c5a0f3pf7744i" path="res://Assets/Music/707042__vilkas_sound__vs-button-click-05.mp3" id="3_x0pf8"]
 [ext_resource type="Texture2D" uid="uid://oy5aje7k8d04" path="res://Assets/Grass.png" id="4_nwq8c"]
 [ext_resource type="Script" uid="uid://kl7cgrjvw212" path="res://label_2.gd" id="5_pdjcm"]
 [ext_resource type="FontFile" uid="uid://bco1yqcs0ihm2" path="res://Assets/Fonts/static/PixelifySans-SemiBold.ttf" id="5_unhnm"]
 [ext_resource type="PackedScene" uid="uid://b2yr6m71k2r8n" path="res://shader_scene.tscn" id="7_ifdfu"]
+[ext_resource type="AudioStream" uid="uid://cg35jn5m28ofn" path="res://Assets/Music/653064__novasoundtechnology__low-dark-sub-heavy-scarey-scared-digital-driller-sound-nova-drill-deadly-distorted-horror-evil-dark-drilling-nova-sound.wav" id="8_f3sii"]
 
 [node name="restartMenu" type="Node2D" unique_id=1952259573]
 process_mode = 3
@@ -22,6 +24,10 @@ scale = Vector2(0.5, 0.5)
 text = "Restart"
 icon = ExtResource("2_eg8yu")
 flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=154462507]
+stream = ExtResource("3_x0pf8")
+volume_db = 15.0
 
 [node name="Label" type="Label" parent="." unique_id=1032396681]
 top_level = true
@@ -48,5 +54,10 @@ script = ExtResource("5_pdjcm")
 
 [node name="ShaderScene" parent="." unique_id=1865491015 instance=ExtResource("7_ifdfu")]
 position = Vector2(420, 53)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=951315581]
+stream = ExtResource("8_f3sii")
+volume_db = 15.0
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

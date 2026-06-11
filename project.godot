@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*uid://ghbhbdiyfmm0"
+MusicPlayer="*uid://bb7hfom4ppsqo"
 
 [display]
 

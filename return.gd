@@ -12,5 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	$AudioStreamPlayer2D.play()
 	Globals.reload  = true
+	await $AudioStreamPlayer2D.finished
 	get_tree().change_scene_to_file("res://level.tscn")
