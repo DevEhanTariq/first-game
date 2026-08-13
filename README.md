@@ -1,3 +1,6 @@
+> [!NOTE]
+> As the title says, "FIRST GAME", pretty self-explanatory
+
 # First Game!
 
 ### Description:
